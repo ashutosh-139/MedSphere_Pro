@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> MedSphere Pro | User Dashboard </title>
-    <link rel="shortcut icon" type="image/png"
-        href="{{ asset('assets/frontalPagesAssets/img/favicon.ico') }}" />
+    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/frontalPagesAssets/img/favicon.ico') }}" />
     <link rel="stylesheet" href="{{ asset('assets/userDashboardAssets/css/styles.min.css') }}" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.5/css/dataTables.dataTables.min.css" />
 </head>
 
 <body>
@@ -35,7 +35,7 @@
                             <span class="hide-menu">Home</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="{{ url('/#') }}" aria-expanded="false">
+                            <a class="sidebar-link" href="{{ url('/User-Dashboard') }}" aria-expanded="false">
                                 <span>
                                     <iconify-icon icon="solar:home-smile-bold-duotone" class="fs-6"></iconify-icon>
                                 </span>
@@ -47,16 +47,16 @@
                             <span class="hide-menu">UI COMPONENTS</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
+                            <a class="sidebar-link" href="{{ url('/test?sec=2') }}" aria-expanded="false">
                                 <span>
                                     <iconify-icon icon="solar:layers-minimalistic-bold-duotone"
                                         class="fs-6"></iconify-icon>
                                 </span>
-                                <span class="hide-menu">Buttons</span>
+                                <span class="hide-menu">My Application</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
+                            <a class="sidebar-link" href="{{ url('/test?sec=1') }}" aria-expanded="false">
                                 <span>
                                     <iconify-icon icon="solar:danger-circle-bold-duotone" class="fs-6"></iconify-icon>
                                 </span>
@@ -64,7 +64,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./ui-card.html" aria-expanded="false">
+                            <a class="sidebar-link" href="{{ url('/#') }}" aria-expanded="false">
                                 <span>
                                     <iconify-icon icon="solar:bookmark-square-minimalistic-bold-duotone"
                                         class="fs-6"></iconify-icon>
@@ -73,15 +73,15 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
+                            <a class="sidebar-link" href="{{ url('/#') }}" aria-expanded="false">
                                 <span>
                                     <iconify-icon icon="solar:file-text-bold-duotone" class="fs-6"></iconify-icon>
                                 </span>
-                                <span class="hide-menu">Forms</span>
+                                <span class="hide-menu">Payments Receipts</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./ui-typography.html" aria-expanded="false">
+                            <a class="sidebar-link" href="{{ url('/#') }}" aria-expanded="false">
                                 <span>
                                     <iconify-icon icon="solar:text-field-focus-bold-duotone"
                                         class="fs-6"></iconify-icon>
@@ -95,7 +95,7 @@
                             <span class="hide-menu">AUTH</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
+                            <a class="sidebar-link" href="{{ url('/#') }}" aria-expanded="false">
                                 <span>
                                     <iconify-icon icon="solar:login-3-bold-duotone" class="fs-6"></iconify-icon>
                                 </span>
@@ -103,7 +103,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
+                            <a class="sidebar-link" href="{{ url('/#') }}" aria-expanded="false">
                                 <span>
                                     <iconify-icon icon="solar:user-plus-rounded-bold-duotone"
                                         class="fs-6"></iconify-icon>
@@ -117,7 +117,7 @@
                             <span class="hide-menu">EXTRA</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./icon-tabler.html" aria-expanded="false">
+                            <a class="sidebar-link" href="{{ url('/#') }}" aria-expanded="false">
                                 <span>
                                     <iconify-icon icon="solar:sticker-smile-circle-2-bold-duotone"
                                         class="fs-6"></iconify-icon>
@@ -126,7 +126,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./sample-page.html" aria-expanded="false">
+                            <a class="sidebar-link" href="{{ url('/#') }}" aria-expanded="false">
                                 <span>
                                     <iconify-icon icon="solar:planet-3-bold-duotone" class="fs-6"></iconify-icon>
                                 </span>
@@ -155,7 +155,7 @@
                         </li>
                     </ul>
                     <form class="d-flex w-100">
-                        <input class="form-control me-2 border border-success" type="search" placeholder="Search"
+                        <input class="form-control me-2 border border-success" id="search-input" type="search" placeholder="Search"
                             aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
@@ -164,23 +164,23 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="{{ asset('assets/userDashboardAssets/images/profile/user-1.jpg') }}"
+                                    <img src="{{ asset('assets/userDashboardAssets/images/profile/user-3.jpg') }}"
                                         alt="" width="35" height="35" class="rounded-circle">
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
                                     aria-labelledby="drop2">
                                     <div class="message-body">
-                                        <a href="javascript:void(0)"
+                                        <a href="{{ '/#' }}"
                                             class="d-flex align-items-center gap-2 dropdown-item">
                                             <i class="ti ti-user fs-6"></i>
                                             <p class="mb-0 fs-3">My Profile</p>
                                         </a>
-                                        <a href="javascript:void(0)"
+                                        <a href="{{ '/#' }}"
                                             class="d-flex align-items-center gap-2 dropdown-item">
                                             <i class="ti ti-mail fs-6"></i>
                                             <p class="mb-0 fs-3">My Appointments</p>
                                         </a>
-                                        <a href="./authentication-login.html"
+                                        <a href="{{ url('/log-out') }}"
                                             class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
                                     </div>
                                 </div>

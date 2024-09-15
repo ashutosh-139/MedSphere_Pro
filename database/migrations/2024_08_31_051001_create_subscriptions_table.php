@@ -11,8 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('subscriptions.phps', function (Blueprint $table) {
+        Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
+            $table->string('subscription_mail')->unique();
+            $table->timestamps();
+        });
+
+        Schema::create('suggestions', function (Blueprint $table) {
+            $table->id();
+            $table->text('message');
+            $table->string('name');
+            $table->string('email');
+            $table->string('subject');
             $table->timestamps();
         });
     }
@@ -22,6 +32,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('subscriptions.phps');
+        Schema::dropIfExists('subscriptions');
+        Schema::dropIfExists('suggestions');
     }
 };

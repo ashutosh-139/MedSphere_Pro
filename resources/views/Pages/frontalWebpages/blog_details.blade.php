@@ -500,7 +500,7 @@
                                     <h2>100% satisfaction guaranteed.</h2>
                                 </div>
                                 <p>Almost before we knew it, we had left the ground</p>
-                                <a href="{{ url('/about') }}" class="border-btn">Make an Appointment</a>
+                                <a href="{{ route('userDashboard') }}" class="border-btn">Make an Appointment</a>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">

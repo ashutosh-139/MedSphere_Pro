@@ -91,7 +91,8 @@
                                 dignissim dolor, a pretium mi sem ut ipsum. Fusce
                                 fermentum. Pellentesque libero tortor, tincidunt et.</p>
                             <div class="icon-about">
-                                <img src="{{ asset('assets/frontalPagesAssets/img/icon/about1.svg') }}" alt="" class=" mr-20">
+                                <img src="{{ asset('assets/frontalPagesAssets/img/icon/about1.svg') }}" alt=""
+                                    class=" mr-20">
                                 <img src="{{ asset('assets/frontalPagesAssets/img/icon/about2.svg') }}" alt="">
                             </div>
                         </div>
@@ -110,40 +111,40 @@
                                 <!-- Single Testimonial -->
                                 <div class="single-testimonial position-relative">
                                     <div class="testimonial-caption">
-                                        <img src="{{ asset('assets/frontalPagesAssets/img/icon/quotes-sign.png') }}" alt=""
-                                            class="quotes-sign">
-                                        <p>"The automated process starts as soon as your clothe go into the machine. This
-                                            site outcome is gleaming clothe. Placeholder text commonly used. In publishing
-                                            and graphic.</p>
+                                        <img src="{{ asset('assets/frontalPagesAssets/img/icon/quotes-sign.png') }}"
+                                            alt="" class="quotes-sign">
+                                        <p>"MedSphere Pro has revolutionized our practice. Seamless registration and
+                                            insightful patient reviews have significantly improved our service quality."</p>
                                     </div>
                                     <!-- founder -->
                                     <div class="testimonial-founder d-flex align-items-center">
                                         <div class="founder-img">
-                                            <img src="{{ asset('assets/frontalPagesAssets/img/icon/testimonial.png') }}" alt="">
+                                            <img src="{{ asset('assets/frontalPagesAssets/img/icon/testimonial.png') }}"
+                                                alt="">
                                         </div>
                                         <div class="founder-text">
-                                            <span>Robart Brown</span>
-                                            <p>Creative designer at Colorlib</p>
+                                            <span>Sneha Kapoor</span>
+                                            <p>Clinical Psychologist, Financial Analyst</p>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Single Testimonial -->
                                 <div class="single-testimonial position-relative">
                                     <div class="testimonial-caption">
-                                        <img src="{{ asset('assets/frontalPagesAssets/img/icon/quotes-sign.png') }}" alt=""
-                                            class="quotes-sign">
-                                        <p>"The automated process starts as soon as your clothe go into the machine. This
-                                            site outcome is gleaming clothe. Placeholder text commonly used. In publishing
-                                            and graphic.</p>
+                                        <img src="{{ asset('assets/frontalPagesAssets/img/icon/quotes-sign.png') }}"
+                                            alt="" class="quotes-sign">
+                                        <p>"MedSphere Pro made managing my health a breeze. Easy booking, helpful reminders,
+                                            and secure records—truly a game-changer!"</p>
                                     </div>
                                     <!-- founder -->
                                     <div class="testimonial-founder d-flex align-items-center">
                                         <div class="founder-img">
-                                            <img src="{{ asset('assets/frontalPagesAssets/img/icon/testimonial.png') }}" alt="">
+                                            <img src="{{ asset('assets/frontalPagesAssets/img/icon/testonomial_img.jpg') }}"
+                                                class="quotes-sign rounded" alt="">
                                         </div>
                                         <div class="founder-text">
-                                            <span>Robart Brown</span>
-                                            <p>Creative designer at Colorlib</p>
+                                            <span>Aarav Patel</span>
+                                            <p>Software Engineer, Marketing Manager</p>
                                         </div>
                                     </div>
                                 </div>
@@ -184,7 +185,8 @@
                         <div class="home-blog-single mb-40">
                             <div class="blog-img-cap">
                                 <div class="blog-img">
-                                    <img src="{{ asset('assets/frontalPagesAssets/img/gallery/blog1.png') }}" alt="">
+                                    <img src="{{ asset('assets/frontalPagesAssets/img/gallery/blog1.png') }}"
+                                        alt="">
                                 </div>
                                 <div class="blog-cap">
                                     <h3><a href="{{ url('/about/#') }}">Your daily meal plan</a></h3>
@@ -199,7 +201,8 @@
                         <div class="home-blog-single mb-40">
                             <div class="blog-img-cap">
                                 <div class="blog-img">
-                                    <img src="{{ asset('assets/frontalPagesAssets/img/gallery/blog2.png') }}" alt="">
+                                    <img src="{{ asset('assets/frontalPagesAssets/img/gallery/blog2.png') }}"
+                                        alt="">
                                 </div>
                                 <div class="blog-cap">
                                     <h3><a href="{{ url('/about/#') }}">Food is a great source of medicine</a></h3>
@@ -214,7 +217,8 @@
                         <div class="home-blog-single mb-40">
                             <div class="blog-img-cap">
                                 <div class="blog-img">
-                                    <img src="{{ asset('assets/frontalPagesAssets/img/gallery/blog3.png') }}" alt="">
+                                    <img src="{{ asset('assets/frontalPagesAssets/img/gallery/blog3.png') }}"
+                                        alt="">
                                 </div>
                                 <div class="blog-cap">
                                     <h3><a href="{{ url('/about/#') }}">Everyday diet plan</a></h3>
@@ -241,14 +245,15 @@
                                     <h2>100% satisfaction guaranteed.</h2>
                                 </div>
                                 <p>Almost before we knew it, we had left the ground</p>
-                                <a href="{{ url('/about/#') }}" class="border-btn">Make an Appointment</a>
+                                <a href="{{ route('userDashboard') }}" class="border-btn">Make an Appointment</a>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <!-- about-img -->
                             <div class="about-img">
                                 <div class="about-font-img">
-                                    <img src="{{ asset('assets/frontalPagesAssets/img/gallery/about2.png') }}" alt="">
+                                    <img src="{{ asset('assets/frontalPagesAssets/img/gallery/about2.png') }}"
+                                        alt="">
                                 </div>
                             </div>
                         </div>

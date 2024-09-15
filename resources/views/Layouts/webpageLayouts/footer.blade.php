@@ -21,14 +21,14 @@
                                                     <li><a href="{{ url('/about') }}">About</a></li>
                                                     <li><a href="{{ url('/services') }}">Services</a></li>
                                                     <li><a href="{{ url('/blog') }}">Blog</a></li>
-                                                    <li><a href="{{ url('/contect') }}">Contact</a></li>
+                                                    <li><a href="{{ url('/contact') }}">Contact</a></li>
                                                 </ul>
                                             </nav>
                                         </div>
                                     </div>
                                 </div>
                             </d>
-                            <!-- social -->
+                            <!-- social media -->
                             <div class="footer-social mt-50">
                                 <a href="/#"><i class="fab fa-twitter"></i></a>
                                 <a href="/#"><i class="fab fa-facebook-f"></i></a>
@@ -41,7 +41,7 @@
                             <div class="footer-tittle mb-50">
                                 <h4>Subscribe newsletter</h4>
                             </div>
-                            <!-- Form -->
+                            <!-- Subscription Form -->
                             <div class="footer-form">
                                 <div id="mc_embed_signup">
                                     <form action="" method="post" class="subscribe_form relative mail_part"
@@ -78,13 +78,12 @@
                     <div class="row">
                         <div class="col-xl-10 ">
                             <div class="footer-copy-right">
-                                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                <p>
                                     Copyright &copy;
                                     <script>
                                         document.write(new Date().getFullYear());
                                     </script> All rights reserved | Developed by <i class="fa fa-heart"
                                         aria-hidden="true"></i> by <a href="#">Ashutosh</a>
-                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                 </p>
                             </div>
                         </div>

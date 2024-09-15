@@ -24,7 +24,7 @@
                                         </h1>
                                         <p data-animation="fadeInUp" data-delay=".6s">Empowering Wellness with <br> Smart,
                                             Simple Care</p>
-                                        <a href="{{ url('/#') }}" class="btn" data-animation="fadeInLeft"
+                                        <a href="{{ url('/services') }}" class="btn" data-animation="fadeInLeft"
                                             data-delay=".3s">Take a Service</a>
                                     </div>
                                 </div>
@@ -50,7 +50,7 @@
                                         </h1>
                                         <p data-animation="fadeInUp" data-delay=".6s">Almost before we knew it, we<br> had
                                             left the ground</p>
-                                        <a href="{{ url('/#') }}" class="btn" data-animation="fadeInLeft"
+                                        <a href="{{ url('/services') }}" class="btn" data-animation="fadeInLeft"
                                             data-delay=".3s">Take a
                                             Service</a>
                                     </div>
@@ -105,7 +105,7 @@
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-3 col-md-4">
-                            <a href="{{ url('/#') }}" class="btn f-right sm-left">Take a Service</a>
+                            <a href="{{ url('/services') }}" class="btn f-right sm-left">Take a Service</a>
                         </div>
                     </div>
                 </div>
@@ -302,7 +302,7 @@
                                     <h2>100% satisfaction guaranteed.</h2>
                                 </div>
                                 <p>Almost before we knew it, we had left the ground</p>
-                                <a href="{{ url('/#') }}" class="border-btn">Make an Appointment</a>
+                                <a href="{{ route('userDashboard') }}" class="border-btn">Make an Appointment</a>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">

@@ -1,4 +1,7 @@
 </div>
+
+@stack('script')
+
 <script src="{{ asset('assets/userDashboardAssets/libs/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/userDashboardAssets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
 <!-- <script src="assets/libs/apexcharts/dist/apexcharts.min.js"></script> -->

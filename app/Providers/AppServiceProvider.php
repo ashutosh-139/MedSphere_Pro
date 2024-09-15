@@ -19,6 +19,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // require_once base_path('app/Helpers/textHelper.php');
     }
 }

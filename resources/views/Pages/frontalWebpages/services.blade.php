@@ -51,10 +51,9 @@
                                 <img src="{{ asset('assets/frontalPagesAssets/img/icon/services1.svg') }}" alt="">
                             </div>
                             <div class="cat-cap">
-                                <h5><a href="{{ url('/services/#') }}">Physical Activity</a></h5>
-                                <p>Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi
-                                    sem ut ipsum.</p>
-                                <a href="{{ url('/services/#') }}" class="plus-btn"><i class="ti-plus"></i></a>
+                                <h5><a href="{{ route('userDashboard') }}">Instant Appointment Booking</a></h5>
+                                <p> Easily schedule and manage appointments with your preferred healthcare providers. </p>
+                                <a href="{{ route('userDashboard') }}" class="plus-btn"><i class="ti-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -64,10 +63,10 @@
                                 <img src="{{ asset('assets/frontalPagesAssets/img/icon/services2.svg') }}" alt="">
                             </div>
                             <div class="cat-cap">
-                                <h5><a href="{{ url('/services/#') }}">Physical Activity</a></h5>
-                                <p>Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi
-                                    sem ut ipsum.</p>
-                                <a href="{{ url('/services/#') }}" class="plus-btn"><i class="ti-plus"></i></a>
+                                <h5><a href="{{ route('userDashboard') }}">Personalized Health Reminders</a></h5>
+                                <p> Receive tailored reminders for appointments, medications, and regular health check-ups.
+                                </p>
+                                <a href="{{ route('userDashboard') }}" class="plus-btn"><i class="ti-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -77,10 +76,10 @@
                                 <img src="{{ asset('assets/frontalPagesAssets/img/icon/services3.svg') }}" alt="">
                             </div>
                             <div class="cat-cap">
-                                <h5><a href="{{ url('/services/#') }}">Physical Activity</a></h5>
-                                <p>Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi
-                                    sem ut ipsum.</p>
-                                <a href="{{ url('/services/#') }}" class="plus-btn"><i class="ti-plus"></i></a>
+                                <h5><a href="{{ url('/adminDashboard') }}">Hospital Registration & Reviews</a></h5>
+                                <p>Hospitals can register on our platform, receive patient feedback, and enhance their
+                                    services for better performance.</p>
+                                <a href="{{ url('/adminDashboard') }}" class="plus-btn"><i class="ti-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -91,7 +90,7 @@
         <!--? video_start -->
         <div class="container pt-40">
             <div class="video-area section-bg2 d-flex align-items-center"
-                data-background="assets/frontalPagesAssets/img/gallery/video-bg.png">
+                data-background="{{ asset('assets/frontalPagesAssets/img/gallery/video-bg.png') }}">
                 <div class="video-wrap position-relative">
                     <div class="video-icon">
                         <a class="popup-video btn-icon" href="https://www.youtube.com/watch?v=up68UAfH0d0"><i
@@ -172,7 +171,7 @@
                                     <h2>100% satisfaction guaranteed.</h2>
                                 </div>
                                 <p>Almost before we knew it, we had left the ground</p>
-                                <a href="{{ url('take-appointment') }}" class="border-btn">Make an Appointment</a>
+                                <a href="{{ route('userDashboard') }}" class="border-btn">Make an Appointment</a>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">

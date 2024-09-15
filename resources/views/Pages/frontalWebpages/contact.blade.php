@@ -40,23 +40,6 @@
                                 lat: -25.363,
                                 lng: 131.044
                             };
-                            // var grayStyles = [{
-                            //     featureType: "all",
-                            //     stylers: [{
-                            //         saturation: -90
-                            //     },
-                            //     {
-                            //         lightness: 50
-                            //     }
-                            //     ]
-                            // },
-                            // {
-                            //     elementType: 'labels.text.fill',
-                            //     stylers: [{
-                            //         color: '#ccdee9'
-                            //     }]
-                            // }
-                            // ];
                             var map = new google.maps.Map(document.getElementById('map'), {
                                 center: {
                                     lat: -31.197,
@@ -152,7 +135,7 @@
                                     <h2>100% satisfaction guaranteed.</h2>
                                 </div>
                                 <p>Almost before we knew it, we had left the ground</p>
-                                <a href="{{ url('/Take-appointment') }}" class="border-btn">Make an Appointment</a>
+                                <a href="{{ route('userDashboard') }}" class="border-btn">Make an Appointment</a>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">

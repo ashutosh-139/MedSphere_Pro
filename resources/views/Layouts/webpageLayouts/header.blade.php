@@ -15,10 +15,11 @@
     <!-- CSS Starts here -->
 
     {{-- Bootstrap CSS CDN (Content Delivery Network) --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
 
     {{-- CDN for Responsive NavBar --}}
     <link rel="stylesheet" href="{{ asset('assets/frontalPagesAssets/css/slicknav.css') }} ">
+    <link rel="stylesheet" href="{{ asset('assets/frontalPagesAssets/css/bootstrap.min.css') }} ">
     <link rel="stylesheet" href="{{ asset('assets/frontalPagesAssets/css/flaticon.css') }} ">
     <link rel="stylesheet" href="{{ asset('assets/frontalPagesAssets/css/gijgo.css') }} ">
     <link rel="stylesheet" href="{{ asset('assets/frontalPagesAssets/css/animate.min.css') }} ">
@@ -71,7 +72,7 @@
                                                 <ul class="submenu">
                                                     <li><a href="{{ url('./blog') }}">Blog</a></li>
                                                     <li><a href="{{ url('./blog-details') }}">Blog Details</a></li>
-                                                    <li><a href="{{ url('./elements') }}">Element</a></li>
+                                                    {{-- <li><a href="{{ url('./elements') }}">Element</a></li> --}}
                                                 </ul>
                                             </li>
                                             <li><a href="{{ url('./contact') }}">Contact</a></li>
@@ -79,7 +80,7 @@
                                     </nav>
                                 </div>
                                 <div class="header-right-btn f-right d-none d-lg-block ml-15">
-                                    <a href="{{ url('/#') }}" class="btn header-btn">Make an Appointment</a>
+                                    <a href="{{ url('/User-Dashboard') }}" class="btn header-btn">Make an Appointment</a>
                                 </div>
                             </div>
                         </div>
