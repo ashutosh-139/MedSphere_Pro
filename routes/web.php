@@ -16,8 +16,10 @@ Route::get('/about', [Controller::class, 'about'])->name('about');
 Route::get('/services', [Controller::class, 'services'])->name('services');
 Route::get('/blog', [Controller::class, 'blog'])->name('blog');
 Route::get('/contact', [Controller::class, 'contact'])->name('contact');
+Route::post('/contact-form', [Controller::class, 'contact_submission'])->name('contact.submit');
 Route::get('/blog-details', [Controller::class, 'blogs_info'])->name('blogs_info');
 Route::get('/elements', [Controller::class, 'elements'])->name('elements');
+Route::post('/newsletter', [Controller::class, 'subscription'])->name('newsletter');
 
 // Routes for the User Dashboard Only
 Route::get('/User-Register', [userDashboardController::class, 'register'])->name('register');

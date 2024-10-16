@@ -17,7 +17,10 @@ class PaymentFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id' => 1,
+            'hospital_id' => 1,
+            'payment_amount' => 200,
+            'transection_id' => fake()->unique()->uuid()
         ];
     }
 }

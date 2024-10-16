@@ -60,34 +60,52 @@
                         <h2 class="contact-title">Get in Touch</h2>
                     </div>
                     <div class="col-lg-8">
-                        <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm"
-                            novalidate="novalidate">
+                        @if (session()->get('msg'))
+                            <div class="alert alert-success h4">
+                                {{ session()->pull('msg') }}
+                            </div>
+                        @endif  
+
+                        <form class="form-contact contact_form" action="{{ route('contact.submit') }}" method="post">
+                            @csrf
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
                                         <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9"
-                                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Enter Message"></textarea>
+                                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Enter Message" required></textarea>
+                                        @error('message')
+                                            Error in Message
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <input class="form-control valid" name="name" id="name" type="text"
                                             onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'"
-                                            placeholder="Enter your name">
+                                            placeholder="Enter your name" required>
+                                        @error('name')
+                                            Error in Name
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <input class="form-control valid" name="email" id="email" type="email"
                                             onfocus="this.placeholder = ''"
-                                            onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                                            onblur="this.placeholder = 'Enter email address'" placeholder="Email" required>
+                                        @error('email')
+                                            Error in Email
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
                                         <input class="form-control" name="subject" id="subject" type="text"
                                             onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'"
-                                            placeholder="Enter Subject">
+                                            placeholder="Enter Subject" required>
+                                        @error('subject')
+                                            Error in Subject
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
@@ -142,7 +160,8 @@
                             <!-- about-img -->
                             <div class="about-img">
                                 <div class="about-font-img">
-                                    <img src="{{ asset('assets/frontalPagesAssets/img/gallery/about2.png') }}" alt="">
+                                    <img src="{{ asset('assets/frontalPagesAssets/img/gallery/about2.png') }}"
+                                        alt="">
                                 </div>
                             </div>
                         </div>

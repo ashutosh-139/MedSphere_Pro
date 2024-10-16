@@ -14,10 +14,11 @@ class SlotFactory extends Factory
      *
      * @return array<string, mixed>
      */
+    
     public function definition(): array
     {
         return [
-            //
+            'slot' => '8:00 AM to 9:00AM'
         ];
     }
 }

@@ -12,12 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('hospitals', function (Blueprint $table) {
-            $table->id('_id');
+            $table->id();
             $table->string('name');
             $table->string('address');
             $table->longText('description');
             $table->string('contact_no')->unique();
             $table->string('contact_mail')->unique();
+            $table->string('password');
             $table->string('hospital_img')->nullable();
             $table->integer('appointment_fee');
             $table->string('payment_id')->unique();
@@ -29,7 +30,7 @@ return new class extends Migration
         Schema::create('hospital_staff', function (Blueprint $table) {
             $table->id();
             $table->foreignId('hospital_id')
-                  ->constrained('hospitals', '_id') // Properly referencing the '_id' column in 'hospitals'
+                  ->constrained('hospitals', 'id') // Properly referencing the '_id' column in 'hospitals'
                   ->onDelete('cascade');
             $table->string('staff_id')->nullable();
             $table->string('name');
@@ -47,7 +48,7 @@ return new class extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->foreignId('hospital_id')
-                  ->constrained('hospitals', '_id') // Properly referencing the '_id' column in 'hospitals'
+                  ->constrained('hospitals', 'id') // Properly referencing the '_id' column in 'hospitals'
                   ->onDelete('cascade');
             $table->foreignId('user_id')
                   ->constrained('users', 'id') // Properly referencing the 'id' column in 'users'

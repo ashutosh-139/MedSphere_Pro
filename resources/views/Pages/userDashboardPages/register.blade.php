@@ -26,24 +26,25 @@
                                         alt="">
                                 </a>
                                 <p class="text-center">Your Health Care Specialist</p>
-                                <form method="POST" action="{{ url('/') }}">
+                                <form method="POST" action="{{ url('/User-Register') }}">
+                                    @csrf
                                     <div class="mb-3">
-                                        <label for="exampleInputtext1" class="form-label">Full Name <span class="text-danger h6">*</span></label>
-                                        <input type="text" class="form-control" id="exampleInputtext1"
+                                        <label for="Inputtext1" class="form-label">Full Name <span class="text-danger h6">*</span></label>
+                                        <input type="text" class="form-control" name="name" id="Inputtext1"
                                             aria-describedby="textHelp">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Email Address <span class="text-danger h6">*</span></label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1"
+                                        <label for="InputEmail1" class="form-label">Email Address <span class="text-danger h6">*</span></label>
+                                        <input type="email" class="form-control" name="email" id="InputEmail1"
                                             aria-describedby="emailHelp">
                                     </div>
                                     <div class="mb-4">
-                                        <label for="exampleInputPassword1" class="form-label">Password <span class="text-danger h6">*</span></label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1">
+                                        <label for="InputPassword1" class="form-label">Password <span class="text-danger h6">*</span></label>
+                                        <input type="password" class="form-control" name="password" id="InputPassword1">
                                     </div>
                                     <div class="mb-4">
-                                        <label for="exampleInputPassword2" class="form-label">Confirm Password <span class="text-danger h6">*</span></label>
-                                        <input type="passwordconfirmation" class="form-control" id="exampleInputPassword2">
+                                        <label for="InputPassword2" class="form-label">Confirm Password <span class="text-danger h6">*</span></label>
+                                        <input type="password" class="form-control" name="password_confirmation" id="InputPassword2">
                                     </div>
                                     <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4">Sign
                                         Up</button>

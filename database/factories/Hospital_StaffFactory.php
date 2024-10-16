@@ -17,12 +17,11 @@ class Hospital_StaffFactory extends Factory
     public function definition(): array
     {
         return [
-            'hospital_id' => Hospital::factory(),
             'staff_id' => strtoupper(uniqid('HOSP_')),
             'name' => fake()->name,
             'contact_no' => fake()->phoneNumber,
             'contact_mail' => fake()->unique()->safeEmail,
-            'specialization' => fake()->paragraph,
+            'specialization' => fake()->text(200),
             'joing_date' => now(),
         ];
     }

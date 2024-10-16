@@ -1,5 +1,6 @@
 <footer>
-    <div class="footer-wrappr section-bg3" data-background="{{ asset('assets/frontalPagesAssets/img/gallery/footer-bg.png') }}">
+    <div class="footer-wrappr section-bg3"
+        data-background="{{ asset('assets/frontalPagesAssets/img/gallery/footer-bg.png') }}">
         <div class="footer-area footer-padding ">
             <div class="container">
                 <div class="row justify-content-between">
@@ -8,7 +9,8 @@
                             <!-- logo -->
                             <div class="footer-logo mb-25">
                                 <a href="{{ url('/#') }}"><img
-                                        src="{{ asset('assets/frontalPagesAssets/img/logo/MedSphere_Pro_logo.png') }}" alt=""></a>
+                                        src="{{ asset('assets/frontalPagesAssets/img/logo/MedSphere_Pro_logo.png') }}"
+                                        alt=""></a>
                             </div>
                             <d iv class="header-area">
                                 <div class="main-header main-header2">
@@ -43,9 +45,20 @@
                             </div>
                             <!-- Subscription Form -->
                             <div class="footer-form">
-                                <div id="mc_embed_signup">
-                                    <form action="" method="post" class="subscribe_form relative mail_part"
-                                        novalidate="true">
+                                <div id="mc_embed_sinup">
+                                    <form action="{{ route('newsletter') }}" method="post"
+                                        class="subscribe_form relative mail_part">
+                                        @csrf
+                                        @if (session()->has('subscribed'))
+                                            @if (session()->pull('subscribed') == true)
+                                                <div class="alert alert-success h5 rounded">Your information stored
+                                                    Successfuly! </div>
+                                            @else
+                                                <div class="alert alert-warning h5 rounded">Already Subscribed!
+                                                    {{ session()->pull('subscribed') }}
+                                                </div>
+                                            @endif
+                                        @endif
                                         <input type="email" name="subscription_Mail" id="newsletter-form-email"
                                             placeholder=" Email Address " class="placeholder hide-on-focus"
                                             onfocus="this.placeholder = ''"

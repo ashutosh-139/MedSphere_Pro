@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Slot extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'hospital_id',
+        'slot',
+    ];
+
+    public function hospital()
+    {
+        return $this->belongsTo(Hospital::class);
+    }
 }

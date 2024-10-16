@@ -22,8 +22,23 @@ class Hospital extends Model
         'payment_id'
     ];
 
-    public function staff(): HasMany
+    public function staff()
     {
-        return $this->hasMany(Hospital_Staff::class, 'hospital_id', '_id');
+        return $this->hasMany(Hospital_Staff::class, 'hospital_id', 'id');
+    }
+
+    public function appointments()
+    {
+        return $this->hasMany(Appointment::class);
+    }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
     }
 }

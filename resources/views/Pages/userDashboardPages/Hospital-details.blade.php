@@ -90,7 +90,7 @@
                                                 <td class="text-center">{{ $staff->name }}</td>
                                                 <td class="text-center">{{ $staff->specialization }}</td>
                                                 <td class="text-center"><a
-                                                        href="{{ url('Hospitals/' . $hospital->_id . '/Book-Appointment/' . $staff->id . '') }}"
+                                                        href="{{ url('Hospitals/' . $hospital->id . '/Book-Appointment/' . $staff->id . '') }}"
                                                         class="btn btn-outline-success"> Book
                                                         Appointment</a>
                                                 </td>

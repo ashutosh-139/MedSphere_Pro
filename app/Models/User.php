@@ -48,8 +48,14 @@ class User extends Authenticatable
         ];
     }
 
-    public function hospital()
+    public function payments()
     {
-        return $this->hasMany(Hospital::class);
+        return $this->hasMany(Payment::class);
     }
+
+    public function appointments()
+    {
+        return $this->hasMany(Appointment::class);
+    }
+
 }

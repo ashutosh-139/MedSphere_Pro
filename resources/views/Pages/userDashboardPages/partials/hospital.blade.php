@@ -9,7 +9,7 @@
     <div class="col-lg-4">
         <div class="card overflow-hidden hover-img">
             <div class="position-relative">
-                <a href="{{ url('/Hospital-Details/'.$hospital->_id.'') }}">
+                <a href="{{ url('/Hospital-Details/'.$hospital->id.'') }}">
                     <img src="{{ $hospital->hospital_img == null ? asset('assets/userDashboardAssets/images/products/hp1.jpg') : $hospital->hospital_img }}"
                         class="card-img-top" alt="matdash-img">
                 </a>

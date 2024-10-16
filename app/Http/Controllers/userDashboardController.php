@@ -11,7 +11,20 @@ class userDashboardController extends Controller
 {
     public function register(Request $request)
     {
-        return view('Pages.userDashboardPages.register');
+        if($request->isMethod('post')){
+            
+            $request->validate([
+                'name' => 'required|string',
+                'email' => 'required|email',
+                'password' => 'required|password',
+                'password_confirmation' => 'required|password'
+            ]);
+
+            echo $request;
+
+        } else {
+            return view('Pages.userDashboardPages.register');
+        }
     }
 
     public function login(Request $request)
@@ -57,12 +70,12 @@ class userDashboardController extends Controller
 
     public function hospital_info(Request $request, string $id)
     {
-        $hospital = Hospital::where('_id', $id)->first();
+        $hospital = Hospital::find($id);
         if (!$hospital) {
             abort(404);
         }
 
-        $hospital_staff = Hospital::where('_id', $id)->first()->staff;
+        $hospital_staff = Hospital::find($id)->staff;
         if ($hospital_staff->isEmpty()) {
             $hospital_staff = 'no_staff';
         }
