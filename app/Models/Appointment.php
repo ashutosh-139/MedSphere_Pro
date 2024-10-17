@@ -36,6 +36,11 @@ class Appointment extends Model
 
     public function doctor()
     {
-        return $this->belongsTo(Hospital_Staff::class);
+        return $this->belongsTo(Hospital_Staff::class, 'stafff_id');
+    }
+
+    public function slot() 
+    {
+        return $this->belongsTo(Slot::class, 'schedule_slot_id');
     }
 }

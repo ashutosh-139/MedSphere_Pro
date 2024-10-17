@@ -28,14 +28,25 @@
                                 <p class="text-center">Your Health Care Specialist</p>
                                 <form method="POST" action="{{ route('validate.user') }}">
                                     @csrf
+
+                                    @if (session()->exists('success'))
+                                        <div class="alert alert-success text-center">
+                                            {{session()->get('success')}}
+                                        </div>
+                                    @endif
+                                    @if (session()->exists('error'))
+                                        <div class="alert alert-warning text-center">
+                                            {{session()->get('error')}}
+                                        </div>
+                                    @endif
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Username</label>
-                                        <input type="email" class="form-control" name="Username" id="exampleInputEmail1"
+                                        <input type="email" class="form-control" name="email" id="exampleInputEmail1"
                                             aria-describedby="emailHelp" value="">
                                     </div>
                                     <div class="mb-4">
                                         <label for="exampleInputPassword1" class="form-label">Password</label>
-                                        <input type="password" class="form-control" name="Userpassword" id="exampleInputPassword1">
+                                        <input type="password" class="form-control" name="password" id="exampleInputPassword1">
                                     </div>
                                     <div class="d-flex align-items-center justify-content-between mb-4">
                                         <div class="form-check">
@@ -47,8 +58,8 @@
                                         </div>
                                         <a class="text-primary fw-bold" href="{{ url('/User-Login/#') }}">Forgot Password ?</a>
                                     </div>
-                                    <a href="{{ url('/#') }}" class="btn btn-primary w-100 py-8 fs-4 mb-4">Sign
-                                        In</a>
+                                    <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4">Sign
+                                        In</button>
                                     <div class="d-flex align-items-center justify-content-center">
                                         <p class="fs-4 mb-0 fw-bold">New to MedSphere Pro?</p>
                                         <a class="text-primary fw-bold ms-2" href="{{ url('/User-Register') }}">Create an

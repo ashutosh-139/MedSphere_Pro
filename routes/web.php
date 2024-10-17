@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\userDashboardController;
 use App\Http\Controllers\appointmentController;
+use GuzzleHttp\Middleware;
+use Illuminate\Support\Facades\Auth;
 
 // Route for just only Testing Purpose
 Route::get('/test', function () {
@@ -26,9 +28,27 @@ Route::get('/User-Register', [userDashboardController::class, 'register'])->name
 Route::post('/User-Register', [userDashboardController::class, 'register']);  //For Submiting Registeration Data
 Route::get('/User-Login', [userDashboardController::class, 'login'])->name('login');
 Route::post('/User-Login', [userDashboardController::class, 'login'])->name('validate.user');        //For Submiting Login Data
-Route::get('/User-Dashboard', [userDashboardController::class, 'index'])->name('userDashboard');
-Route::get('/Hospital-Details/{id}', [userDashboardController::class, 'hospital_info'])->name('hospital.details');
-Route::get('/Hospitals/{hospital_id}/Book-Appointment/{staff_id}', [appointmentController::class, 'book_appointment'])->name('book.appointment');
+
+Route::middleware(['auth'])->group(function () {
+
+    Route::get('/User-Dashboard', [userDashboardController::class, 'index'])->name('userDashboard');
+
+    Route::get('/User-Profile', [userDashboardController::class, 'profile'])->name('user.profile');
+
+    Route::post('/User-Profile', [userDashboardController::class, 'profile'])->name('update.profile');
+
+    Route::get('/User-Appointment', [appointmentController::class, 'my_appointments'])->name('user.appointments');
+
+    Route::get('/Hospital-Details/{id}', [userDashboardController::class, 'hospital_info'])->name('hospital.details');
+
+    Route::get('/Hospitals/{hospital_id}/Book-Appointment/{staff_id}', [appointmentController::class, 'book_appointment'])->name('book.appointment');
+
+    Route::post('/Hospitals/Book-Appointment/cofirm-appointment', [appointmentController::class, 'confirm_booking'])->name('book.appointment.confirm');
+
+    Route::get('/log-out', [userDashboardController::class, 'log_out'])->name('user.logout');        //For Submiting Login Data
+
+});
+
 
 // Routes for the Admin Dashboard Only
 Route::get('/Admin-Dashboard', function () {

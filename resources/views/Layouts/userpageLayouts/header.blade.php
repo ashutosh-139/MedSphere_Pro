@@ -19,7 +19,7 @@
             <!-- Sidebar scroll-->
             <div>
                 <div class="brand-logo d-flex align-items-center justify-content-between">
-                    <a href="{{ url('/#') }}" class="text-nowrap logo-img">
+                    <a href="{{ url('/User-Dashboard') }}" class="text-nowrap logo-img">
                         <img src="{{ asset('assets/frontalPagesAssets/img/logo/MedSphere_Pro_logo.png') }}"
                             alt="" />
                     </a>
@@ -42,12 +42,12 @@
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
-                        <li class="nav-small-cap">
+                        {{-- <li class="nav-small-cap">
                             <i class="ti ti-dots nav-small-cap-icon fs-6"></i>
                             <span class="hide-menu">UI COMPONENTS</span>
-                        </li>
+                        </li> --}}
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="{{ url('/test?sec=2') }}" aria-expanded="false">
+                            <a class="sidebar-link" href="{{ route('user.appointments') }}" aria-expanded="false">
                                 <span>
                                     <iconify-icon icon="solar:layers-minimalistic-bold-duotone"
                                         class="fs-6"></iconify-icon>
@@ -56,6 +56,15 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
+                            <a class="sidebar-link" href="{{ route('user.profile') }}" aria-expanded="false">
+                                <span>
+                                    <iconify-icon icon="solar:layers-minimalistic-bold-duotone"
+                                        class="fs-6"></iconify-icon>
+                                </span>
+                                <span class="hide-menu">My Profile</span>
+                            </a>
+                        </li>
+                        {{-- <li class="sidebar-item">
                             <a class="sidebar-link" href="{{ url('/test?sec=1') }}" aria-expanded="false">
                                 <span>
                                     <iconify-icon icon="solar:danger-circle-bold-duotone" class="fs-6"></iconify-icon>
@@ -132,7 +141,7 @@
                                 </span>
                                 <span class="hide-menu">Sample Page</span>
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
 
                 </nav>
@@ -170,12 +179,12 @@
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
                                     aria-labelledby="drop2">
                                     <div class="message-body">
-                                        <a href="{{ '/#' }}"
+                                        <a href="{{ route('user.profile') }}"
                                             class="d-flex align-items-center gap-2 dropdown-item">
                                             <i class="ti ti-user fs-6"></i>
                                             <p class="mb-0 fs-3">My Profile</p>
                                         </a>
-                                        <a href="{{ '/#' }}"
+                                        <a href="{{ route('user.appointments') }}"
                                             class="d-flex align-items-center gap-2 dropdown-item">
                                             <i class="ti ti-mail fs-6"></i>
                                             <p class="mb-0 fs-3">My Appointments</p>

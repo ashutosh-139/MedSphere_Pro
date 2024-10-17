@@ -28,23 +28,81 @@
                                 <p class="text-center">Your Health Care Specialist</p>
                                 <form method="POST" action="{{ url('/User-Register') }}">
                                     @csrf
+                                    @if (session()->exists('exists'))
+                                        <div class="alert alert-warning text-center">
+                                            {{session()->get('exists')}}
+                                        </div>
+                                    @endif
+
                                     <div class="mb-3">
-                                        <label for="Inputtext1" class="form-label">Full Name <span class="text-danger h6">*</span></label>
+                                        <label for="Inputtext1" class="form-label">Full Name <span
+                                                class="text-danger h6">*</span></label>
                                         <input type="text" class="form-control" name="name" id="Inputtext1"
-                                            aria-describedby="textHelp">
+                                            aria-describedby="textHelp" required>
+                                        <span class="text-small text-danger">
+                                            @error('name')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
                                     </div>
+
                                     <div class="mb-3">
-                                        <label for="InputEmail1" class="form-label">Email Address <span class="text-danger h6">*</span></label>
+                                        <label for="InputEmail1" class="form-label">Email Address <span
+                                                class="text-danger h6">*</span></label>
                                         <input type="email" class="form-control" name="email" id="InputEmail1"
-                                            aria-describedby="emailHelp">
+                                            aria-describedby="emailHelp" required>
+                                        <span class="text-small text-danger">
+                                            @error('email')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="InputEmail1" class="form-label">Contact No <span
+                                                class="text-danger h6">*</span></label>
+                                        <input type="number" class="form-control" name="mobile_no" id="InputEmail1"
+                                            aria-describedby="emailHelp" required>
+                                        <span class="text-small text-danger">
+                                            @error('mobile_no')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="InputEmail1" class="form-label">Your Address <span
+                                                class="text-danger h6">*</span></label>
+                                        <input type="text" class="form-control" name="address" id="InputEmail1"
+                                            aria-describedby="emailHelp" required>
+                                        <span class="text-small text-danger">
+                                            @error('address')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label for="InputPassword1" class="form-label">Password <span
+                                                class="text-danger h6">*</span></label>
+                                        <input type="password" class="form-control" name="password" id="InputPassword1"
+                                            required>
+                                        <span class="text-small text-danger">
+                                            @error('password')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
                                     </div>
                                     <div class="mb-4">
-                                        <label for="InputPassword1" class="form-label">Password <span class="text-danger h6">*</span></label>
-                                        <input type="password" class="form-control" name="password" id="InputPassword1">
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="InputPassword2" class="form-label">Confirm Password <span class="text-danger h6">*</span></label>
-                                        <input type="password" class="form-control" name="password_confirmation" id="InputPassword2">
+                                        <label for="InputPassword2" class="form-label">Confirm Password <span
+                                                class="text-danger h6">*</span></label>
+                                        <input type="password" class="form-control" name="password_confirmation"
+                                            id="InputPassword2" required>
+                                        <span class="text-small text-danger">
+                                            @error('password_confirmation')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
                                     </div>
                                     <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4">Sign
                                         Up</button>

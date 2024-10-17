@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Hospital;
 use App\Models\User;
 use App\Models\Hospital_Staff;
+use App\Models\Slot;
+use Illuminate\Support\Facades\Auth;
 
 class userDashboardController extends Controller
 {
@@ -14,14 +16,30 @@ class userDashboardController extends Controller
         if($request->isMethod('post')){
             
             $request->validate([
-                'name' => 'required|string',
+                'name' => 'required',
                 'email' => 'required|email',
-                'password' => 'required|password',
-                'password_confirmation' => 'required|password'
+                'mobile_no' => 'required|numeric|min:10',
+                'address' => 'required|string',
+                'password' => 'required|confirmed',
+                'password_confirmation' => 'required'
             ]);
-
-            echo $request;
-
+            $if_exist = User::where('email', $request->email)
+                ->orWhere('mobile_no', $request->mobile_no)
+                ->first();
+            if(!$if_exist) {
+                $table = new User();
+                $table->name = $request->name;
+                $table->email = $request->email;
+                $table->mobile_no = $request->mobile_no;
+                $table->address = $request->address;
+                $table->password = bcrypt($request->password);
+                $table->save();
+                session()->flash('success', 'Your Account has been created Scuccessfuly..');
+                return redirect()->route('login');
+            } else {
+                session()->flash('exists', 'These Credentials are already exists..');
+                return redirect()->back();
+            }
         } else {
             return view('Pages.userDashboardPages.register');
         }
@@ -29,21 +47,31 @@ class userDashboardController extends Controller
 
     public function login(Request $request)
     {
-        // if ($request->isMethod('post')) {
-        //     $request->validate([
-        //         'Username' -> 'required|email|size:25',
-        //         'Userpassword' -> 'required|email|size:25'
-        //     ]);
-        // }
-        // return view('Pages.userDashboardPages.login');
+        if ($request->isMethod('post')) {
+            $credentials = $request->validate([
+                'email' => ['required', 'email'],
+                'password' => ['required'],
+            ]);
+        
+            if (Auth::attempt($credentials)) {
+                $request->session()->regenerate();
+                return redirect()->route('userDashboard');
+            }
+            session()->flash('error', 'Incorrect Username or Password..');
+            return redirect()->back();
+        }
+        return view('Pages.userDashboardPages.login');
+    }
+
+    public function log_out(Request $request) {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('login');
     }
 
     public function index(Request $request)
     {
-        // if (session()->missing('user_id')) {
-        //     return redirect('/User-Login');
-        // }
-        // $query = Hospital::query()->where('');
         $query = Hospital::query();
 
         if ($request->has('search')) {
@@ -66,6 +94,16 @@ class userDashboardController extends Controller
         }
 
         return view('Pages.userDashboardPages.index', compact('hospitals'));
+    }
+
+    public function profile(Request $request) {
+
+        if ($request->isMethod('post')) {
+
+        }
+
+        return view('Pages.userDashboardPages.profile');
+
     }
 
     public function hospital_info(Request $request, string $id)

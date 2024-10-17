@@ -41,4 +41,9 @@ class Hospital extends Model
     {
         return $this->hasMany(Review::class);
     }
+
+    public function slot()
+    {
+        return $this->hasMany(Slot::class);
+    }
 }
