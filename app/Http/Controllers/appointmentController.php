@@ -62,7 +62,7 @@ class appointmentController extends Controller
 
     public function my_appointments() {
         $user_id = Auth::user()->id;
-        $appointments = Appointment::where('user_id', $user_id)->latest()->with(['hospital', 'doctor', 'slot'])->get();
+        $appointments = Appointment::where('user_id', $user_id)->orderBy('appointment_date', 'desc')->with(['hospital', 'doctor', 'slot'])->get();
         // print_r($appointments);
         return view('Pages.userDashboardPages.My-Appointment', compact('appointments'));
     }

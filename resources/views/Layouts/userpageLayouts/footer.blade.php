@@ -10,6 +10,11 @@
 <script src="{{ asset('assets/userDashboardAssets/js/app.min.js') }}"></script>
 <script src="{{ asset('assets/userDashboardAssets/js/dashboard.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+<script>
+    $(function() {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
 </body>
 
 </html>

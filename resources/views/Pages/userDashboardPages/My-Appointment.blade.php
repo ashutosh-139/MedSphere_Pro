@@ -19,6 +19,7 @@
                                                 <th class="text-center">Appointment Date</th>
                                                 <th class="text-center">Slot Period</th>
                                                 <th class="text-center">Appointment Fee</th>
+                                                <th class="text-center">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -36,6 +37,14 @@
                                                     <td class="text-center">{{ $appointment->slot->slot }}
                                                     </td>
                                                     <td class="text-center">200 Rs.
+                                                    </td>
+                                                    <td class="class-center">
+                                                        @if($appointment->appointment_date > \Carbon\Carbon::now())
+                                                        <a href="{{ url('appointment/edit', $appointment->id) }}" class="pe-3" data-toggle="tooltip" title="Edit"><i class="ti ti-pencil size-full"> </i></a>
+                                                        <a href="{{ url('appointment/delete', $appointment->id) }}"><i class="ti ti-trash size-full" data-toggle="tooltip" title="Delete"> </i></a>
+                                                        @else
+                                                         --
+                                                        @endif
                                                     </td>
                                                 </tr>
                                             @endforeach

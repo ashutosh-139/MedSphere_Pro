@@ -9,7 +9,7 @@
     <div class="col-lg-4">
         <div class="card overflow-hidden hover-img">
             <div class="position-relative">
-                <a href="{{ url('/Hospital-Details/'.$hospital->id.'') }}">
+                <a href="{{ url('/Hospital-Details/'.$hospital->id) }}">
                     <img src="{{ $hospital->hospital_img == null ? asset('assets/userDashboardAssets/images/products/hp1.jpg') : $hospital->hospital_img }}"
                         class="card-img-top" alt="matdash-img">
                 </a>
@@ -22,7 +22,7 @@
                     height="40" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Georgeanna Ramero">
             </div>
             <div class="card-body p-4">
-                <a class="d-block my-2 fs-5 text-dark fw-semibold link-primary" href="{{ url('/Hospital-Details/'.$hospital->_id.'') }}">
+                <a class="d-block my-2 fs-5 text-dark fw-semibold link-primary" href="{{ url('/Hospital-Details/'.$hospital->id.'') }}">
                     {{ $hospital->name }}
                 </a>
                 <span class="text-bg-light fs-2 py-1 px-2 lh-sm mt-3">
